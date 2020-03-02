@@ -1,6 +1,6 @@
 export const FetchDataAPI = (setData, search) => async dispatch => {
     try {
-        const response = await fetch('http://www.mocky.io/v2/5c9105cb330000112b649af8', {
+        const response = await fetch('https://www.mocky.io/v2/5c9105cb330000112b649af8', {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
