@@ -13,7 +13,7 @@ export default function ProductPage({ }) {
     const dispatch = useDispatch();
     const [dataAPI, setData] = useState([]);
     const [search, setSearch] = useState('');
-    const [styleFilter, setStyle] = useState([]);
+    const [filterValue, setStyle] = useState([]);
 
     useEffect(() => {
         dispatch(FetchDataAPI(setData, search));
@@ -23,12 +23,12 @@ export default function ProductPage({ }) {
         let checkbox = evt.currentTarget.childNodes[1];
         if (checkbox.checked) {
             setStyle([
-                ...styleFilter.filter((val) => val !== checkbox.value)
+                ...filterValue.filter((val) => val !== checkbox.value)
             ]);
             checkbox.checked = false;
         } else {
             setStyle([
-                ...styleFilter, checkbox.value
+                ...filterValue, checkbox.value
             ]);
             checkbox.checked = true;
         }
@@ -71,7 +71,7 @@ export default function ProductPage({ }) {
                 </div>
             </div>
             <div className="body-page">
-                <Card products={dataAPI.products} styleFilter={styleFilter} />
+                <Card products={dataAPI.products} filterValue={filterValue} />
             </div>
         </>
     )

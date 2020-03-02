@@ -26,7 +26,7 @@ export default function DeliveryFilter({ checkHandler, dropDownHandler }) {
                     </div>
                     <div className="field-group" onClick={checkHandler}>
                         <li>More</li>
-                        <input type="checkbox" className="check-box" value='30' />
+                        <input type="checkbox" className="check-box" value='more' />
                         <span className="customBox"></span>
                     </div>
                 </ul>

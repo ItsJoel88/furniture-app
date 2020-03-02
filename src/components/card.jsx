@@ -5,6 +5,15 @@ function wordChecker(str) {
     return str.length > 114 ? str.substr(0, 115) : str;
 };
 
+function betweenDeliveryTime(delivery_time, timeFilter) {
+    let minDays = timeFilter - 7;
+    let maxDays = timeFilter;
+    if (delivery_time >= minDays && delivery_time <= maxDays) {
+        return true;
+    }
+    return false;
+};
+
 function filterProduct(products, style) {
     let productByStyle = [];
     let productByDelivery = [];
@@ -15,9 +24,13 @@ function filterProduct(products, style) {
             if (product.furniture_style.indexOf(val) !== -1) {
                 productByStyle.push(product);
             };
-            if (+val && +product.delivery_time <= +val) {
-                productByDelivery.push(product)
-            }
+            if (+val && betweenDeliveryTime(+product.delivery_time, +val)) {
+                productByDelivery.push(product);
+            };
+
+            if (val === 'more' && +product.delivery_time > 28) {
+                productByDelivery.push(product);
+            };
         });
     });
     if (productByStyle.length && productByDelivery.length) {
@@ -32,38 +45,24 @@ function filterProduct(products, style) {
         filteredProduct = productByStyle.length ? [...new Set(productByStyle)] : [...new Set(productByDelivery)];
     }
     return filteredProduct;
-    // if (filterByStyle.length > 0 && filterByDelivery.length > 0) {
-    //     if (filterByStyle.length > filterByDelivery.length) {
-    //         return filterByStyle.filter((value, index) => {
-    //             if (filterByDelivery[index]) {
-    //                 return filterByDelivery[index].name === value.name
-    //             }
-    //         });
-    //     } else {
-    //         console.log(filterByDelivery, '======')
-    //         console.log(filterByStyle, '=====')
-    //         return filterByDelivery.filter((value, index) => {
-    //             if (filterByStyle[index]) {
-    //                 return filterByStyle[index].name === value.name
-    //             }
-    //         });
-    //     };
-    // } else {
-    //     return filterByStyle.length ? [...new Set(filterByStyle)] : [...new Set(filterByDelivery)];
-    // };
 };
 
 
-const Card = ({ products, styleFilter }) => {
+const Card = ({ products, filterValue }) => {
     const pending = useSelector(state => state.pending);
 
     if (pending) {
         return (
             <img className="loading-img" src="https://1.bp.blogspot.com/-yIhXlQfYN1E/WMksG192LLI/AAAAAAAAA9w/txsqdQfykVksDEFshayeN54c0Gu6C3AAwCLcB/s400-c/glow.gif" alt="loading" />
         );
-    } else if (products.length > 0) {
-        if (styleFilter.length) {
-            products = filterProduct(products, styleFilter);
+    } else if (products.length) {
+        if (filterValue.length) {
+            products = filterProduct(products, filterValue);
+            if (!products.length) {
+                return (
+                    <img src="https://cdn.dribbble.com/users/721524/screenshots/4117132/untitled-1-_1_.png" alt="empty-product" className="empty-product" />
+                )
+            }
         }
         return (
             <div>
@@ -99,9 +98,9 @@ const Card = ({ products, styleFilter }) => {
         );
     } else {
         return (
-            <p>kosong...</p>
-        );
-    };
+            <img src="https://cdn.dribbble.com/users/721524/screenshots/4117132/untitled-1-_1_.png" alt="empty-product" className="empty-product" />
+        )
+    }
 };
 
 export default Card;
