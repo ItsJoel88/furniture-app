@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/furniture-app/static/css/main.55be571d.chunk.css",
+    "main.js": "/furniture-app/static/js/main.4dcb31ac.chunk.js",
+    "main.js.map": "/furniture-app/static/js/main.4dcb31ac.chunk.js.map",
+    "runtime-main.js": "/furniture-app/static/js/runtime-main.28ceefe4.js",
+    "runtime-main.js.map": "/furniture-app/static/js/runtime-main.28ceefe4.js.map",
+    "static/js/2.1565f9c2.chunk.js": "/furniture-app/static/js/2.1565f9c2.chunk.js",
+    "static/js/2.1565f9c2.chunk.js.map": "/furniture-app/static/js/2.1565f9c2.chunk.js.map",
+    "index.html": "/furniture-app/index.html",
+    "precache-manifest.5299343660e3a0f83f96a1b2c28ece26.js": "/furniture-app/precache-manifest.5299343660e3a0f83f96a1b2c28ece26.js",
+    "service-worker.js": "/furniture-app/service-worker.js",
+    "static/css/main.55be571d.chunk.css.map": "/furniture-app/static/css/main.55be571d.chunk.css.map",
+    "static/js/2.1565f9c2.chunk.js.LICENSE.txt": "/furniture-app/static/js/2.1565f9c2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.28ceefe4.js",
+    "static/js/2.1565f9c2.chunk.js",
+    "static/css/main.55be571d.chunk.css",
+    "static/js/main.4dcb31ac.chunk.js"
+  ]
+}
