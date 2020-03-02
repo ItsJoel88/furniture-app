@@ -1,0 +1,247 @@
+.header-page{
+    background-color: #0E6CC8;
+    height: 18vh;
+}
+
+.dropdown-filter{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.searchbar{
+    padding-top: 8px;
+}
+
+.group{
+    position: relative; 
+    margin-left: 30px;
+	margin-bottom: 3px;
+}
+
+input[type="text"] {
+	font-size: 16px;
+	padding: 8px 8px 8px 5px;
+	-webkit-appearance: none;
+	display: block;
+	background: #0E6CC8;
+	color: white;
+	width: 20%;
+	border: none;
+	border-radius: 0;
+	border-bottom: 1px solid #6889C2;
+}
+
+input:focus { 
+    outline: none;
+}
+
+label {
+	color: white; 
+	font-size: 18px;
+	font-weight: normal;
+	position: absolute;
+	pointer-events: none;
+	left: 5px;
+	top: 10px;
+	transition: all 0.2s ease;
+}
+
+input:focus ~ label, input:valid ~ label {
+	top: -3px;
+	font-size: 9px;
+	color: white;
+}
+
+
+/*
+*   Dropdown
+*/
+.dropdown-check-list {
+    display: inline-block;
+    outline: none;
+    padding-bottom: 4px;
+    -moz-user-select     : none;
+    -khtml-user-select   : none;
+    -webkit-user-select  : none;
+    -o-user-select       : none;
+    user-select          : none;
+}
+
+.underline{
+    display: block;
+    margin-top: 4px;
+    height: 2px;
+    width: inherit;
+    background-color: #6889C2;
+}
+
+/* border-bottom: 2px solid #6889C2; */
+
+.dropdown-check-list .anchor {
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 170px 5px 10px;
+    border: 1px solid #ccc;
+}
+.dropdown-check-list .anchor:after {
+    position: absolute;
+    content: "";
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    padding: 5px;
+    right: 10px;
+    top: 20%;
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
+.dropdown-check-list .anchor:active:after {
+    right: 9px;
+    top: 20.5%;
+}
+.dropdown-check-list ul.items {
+    background-color: white;
+    padding: 2px;
+    display: none;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+.dropdown-check-list ul.items li {
+    padding: 5px;
+    list-style: none;
+}
+
+  
+.items{
+    height: 32vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+.field-group{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.check-box{
+    /* transform: scale(1.4); */
+    height: 0;
+    width: 0;
+    margin-top: 8px;
+    margin-right: 11px;
+}
+
+
+
+
+.body-page{
+    height: 82vh;
+}
+
+.card-template{
+    width: 50%;
+    float: left;
+}
+
+.card-body{ 
+    width: 70%;
+    margin: 3% auto;
+    padding: 16px;
+    border-radius: 6px;
+    -webkit-box-shadow: 1px 3px 13px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 3px 13px -8px rgba(0,0,0,0.75);
+    box-shadow: 1px 3px 13px -8px rgba(0,0,0,0.75);
+}
+
+.card-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 4px 8px 8px 0px;
+}
+
+.product-name{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.price{
+    font-size: 16px;
+    color: #F89C33;
+    font-weight: bold;
+}
+
+.card-middle{
+    text-align: left;
+    padding: 8px 8px 8px 0px;
+}
+
+.card-bottom{
+    padding: 8px 8px 8px 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#furnitureStyles{
+    text-decoration: none;
+}
+
+#deliveryDays{
+    font-weight: bold;
+    margin-top: 6%;
+}
+
+.loading-img{
+    display: block;
+    margin: auto;
+    width: 28%;
+    height: 42vh;
+}
+
+.more-description{
+    color: grey;
+}
+
+
+.customBox{
+    margin-top: 8px;
+    width: 15px;
+    background-color: white;
+    border: 2px solid grey;
+    height: 15px;
+    position: absolute;
+    margin-left: 17.7%;
+}
+
+input[type="checkbox"].check-box:checked + .customBox{
+    background-color: green;
+}
+
+input[type="checkbox"].check-box:checked + .customBox::after{
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: 7px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 
+      2px 0 0 white,
+      4px 0 0 white,
+      4px -2px 0 white,
+      4px -4px 0 white,
+      4px -6px 0 white,
+      4px -8px 0 white;
+    transform: rotate(45deg);
+}
